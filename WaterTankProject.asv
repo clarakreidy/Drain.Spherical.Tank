@@ -52,6 +52,8 @@ for i=1:dim+1
     end
 end
 
+for i=1
+
 for i=1:dim+1
     [solution3t,solution3h]=euler_backward(f,t0,hWater,tFinal,dim);
     if solution3h(i)<0
@@ -59,17 +61,14 @@ for i=1:dim+1
     end
 end
 
-solution4=ode23(f, time, hWater);
-
 counter=1;
-plot(solution4.x,solution4.y,time,solution1,' ro-- ',time,solution2,' g*-. ', time, solution3h,' k ', 'linewidth', 2);
-%plot(solution4.x,solution4.y);
+plot(time,solution1,' ro-- ',time,solution2,' g*-. ', time, solution3h,' k ', 'linewidth', 2);
 title("Euler vs RKM vs Euler Backwards");
 xlabel('Time t in seconds');
 ylabel('H(t)');
 legend('Euler, RKM, Euler Backward');
-
 fprintf("\nUsing Euler's Method:\n");
+
 while counter<=dim+1 && solution1(counter)>0
     fprintf("at %f ",time(counter));
     fprintf("seconds we have %f ",solution1(counter));
