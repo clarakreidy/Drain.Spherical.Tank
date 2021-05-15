@@ -11,4 +11,4 @@ function y = GaussianQ2(f, a, b)
   
   y = (c0 * f0 + c1 * f1) * dx;
   
-endfunction
+end

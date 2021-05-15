@@ -20,7 +20,7 @@ if hWater>2*rTank
     error("Water volume is greater than tank volume...");
 end
 
-%Hole surface should be smaller than the widest surface of the sphere
+%Hole radius should be smaller than tank radius
 if rHole >= rTank
     error("Hole radius is bigger than tank radius...");
 end
