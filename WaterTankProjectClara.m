@@ -1,4 +1,4 @@
-pkg load symbolic;
+%pkg load symbolic;
 clear all; close all; clc;
 
 fprintf("This program shows us the behavior of the water in a spherical water tank in the event of a leakage\n");
