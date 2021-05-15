@@ -1,5 +1,6 @@
 function y = GaussianQ2(f, a, b)
-  c0 = c1 = 1;
+  c0 = 1;
+  c1=1;
   x0 = - c0 / sqrt(3);
   x1 = c1 / sqrt(3);
   
@@ -11,4 +12,4 @@ function y = GaussianQ2(f, a, b)
   
   y = (c0 * f0 + c1 * f1) * dx;
   
-endfunction
+end 
