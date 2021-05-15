@@ -18,7 +18,7 @@ time=0:step:tFinal;
 %Water level should be containable in the tank
 if hWater>2*rTank
     error("Water volume is greater than tank volume...");
-end 
+end
 
 %Hole surface should be smaller than the widest surface of the sphere
 if rHole >= rTank
@@ -27,6 +27,7 @@ end
 
 %equation representing dh/dt
 dhdt = @(t,h) -1*(rHole^2*sqrt(2*g*h))/(2*h*rTank-h^2);
-y = ode23(dhdt, time, hWater);
+[t, y] = ode23(dhdt, time, hWater);
 
-plot(y.x, y.y)
+index = find(real(y) >= 0)(end)
+plot(t(1:index), y(1:index))
