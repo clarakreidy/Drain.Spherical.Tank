@@ -13,7 +13,7 @@ g=9.81;
 t0=0;
 step=1;
 
-time=0:step:tFinal;
+time=t0:step:tFinal;
 
 %Water level should be containable in the tank
 if hWater>2*rTank
